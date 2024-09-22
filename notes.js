@@ -106,6 +106,9 @@
 
 // Math.pow(2,power) -- its always retrun double
 
+
+
+
 // ! Remember : - 
 // float marks =  99.99f; // yaha par f likhan jaruri hai qkii by deafult ye double hota hai keuu kii float hota hai 32bit (4byte) aur double hota hai  64-bit(8byte)
 
