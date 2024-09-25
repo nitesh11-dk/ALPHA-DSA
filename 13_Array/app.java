@@ -60,15 +60,97 @@ int[] originalArray = new int[]{2,3,4,6,6,6,5,5,5,5,5,5,5,5,5,5,5,3,63,6,36,3,56
 
 
 // ! pairs in array
-// PairInArray(new int[]{2,3,4,5,6,7}); total number of parus = n(n-1) /2
+// PairInArray(new int[]{2,3,4,5,6,7}); // total number of parus = n(n-1) /2
 
 
-// ! sub array && max of the SUbarray Method - 1
+// ! sub array && max of the SUbarray Method - 1 (Brute Force)
 // SubArray(new int[]{1,-2,6,-1,3});
  // T o(n**3)
 // n(n+1) /2
 
+// ! max Subarray , METHOD - 2 (Prefix array)
+// SubArray1(new int[]{1,2,3,4,5});
+// T o(n**2)  , so optimized than brute force
+
+//  ! KADANE 'S ALGO , T o(n) -- more efficient
+//  sare negative numbers agar huye to kam nahi akrega kadane 
+// Kadane(new int[]{-1,-2,-3});
+KadaneBetter(new int[]{-1,-2,-3});
+
+
     }
+
+      public static void KadaneBetter(int arr[]){
+int ms = Integer.MIN_VALUE ;
+int cs = 0 ;
+
+for(int i = 0 ; i <arr.length ; i++){
+    cs = cs + arr[i];
+    if(cs  <0){
+        cs = 0;
+    }
+    ms = Math.max(cs ,ms) ;
+}
+System.out.print(ms);
+
+    }
+
+
+    public static void Kadane(int arr[]){
+int ms = Integer.MIN_VALUE ;
+int cs = 0 ;
+
+for(int i = 0 ; i <arr.length ; i++){
+    cs = cs + arr[i];
+    if(cs  <0){
+        cs = 0;
+    }
+    ms = Math.max(cs ,ms) ;
+}
+System.out.print(ms);
+
+    }
+
+public static void SubArray1(int arr[]){
+    int preArr[] = new int[arr.length];
+
+    //     int sum0 = 0 ;
+    // for(int i = 0; i<preArr.length ;i++){
+    //     sum0 += arr[i];
+    //     preArr[i] = sum0 ;
+    // }
+
+    // better way to calculate prefix array 
+
+    preArr[0] = arr[0] ;
+    for(int  i =1 ; i< arr.length ; i++){
+
+        preArr[i]= preArr[i-1]+arr[i];
+    }
+
+int min = Integer.MAX_VALUE;
+int max = Integer.MIN_VALUE;
+for(int i = 0;i<arr.length ; i++){
+
+    for(int j = 0 ;j<arr.length ;j++){
+    int sum = i == 0 ? preArr[j] : preArr[j] - preArr[i-1];
+    if(sum > max){
+        max = sum;
+    }
+    if(sum < min){
+            min = sum ;
+    }
+
+    }
+
+}
+    System.out.println(max);
+
+    // for(int i : preArr){
+    //     System.out.print(i + " ");
+    // }
+
+}
 
 public static void SubArray(int arr[]){
 int ts = 0;
