@@ -77,6 +77,47 @@ int[] originalArray = new int[]{2,3,4,6,6,6,5,5,5,5,5,5,5,5,5,5,5,3,63,6,36,3,56
 // Kadane(new int[]{-1,-2,-3});
 // KadaneBetter(new int[]{-1,-2,-3,3,5});
 
+//  ! Trapping ka
+Trapping_Rain_Water(new int[]{6,5,4,3});
+
+    }
+
+    public static void Trapping_Rain_Water( int arr[]){
+          int leftMaxBoundariesArray[] = new int[arr.length];
+          int rightMaxBoundariesArray[] = new int[arr.length];
+
+ int max = Integer.MIN_VALUE ; 
+//  int max = arr[0]; 
+          for(int i = 0 ; i< arr.length ; i++){
+              if(max < arr[i]){
+               leftMaxBoundariesArray[i] = arr[i];
+               max = arr[i];
+              }else {
+               leftMaxBoundariesArray[i] = max;
+
+              }
+          }
+
+//   max = arr[arr.length-1]; 
+max = Integer.MIN_VALUE ;
+          for(int i = arr.length -1 ; i >= 0 ; i--){
+              if(max < arr[i]){
+               rightMaxBoundariesArray[i] = arr[i];
+               max = arr[i];
+              }else {
+               rightMaxBoundariesArray[i] = max;
+
+              }
+          }
+int wl[] = new int[arr.length];
+         for ( int i = 0 ; i<arr.length ; i++){
+              wl[i] = Math.min(leftMaxBoundariesArray[i],rightMaxBoundariesArray[i]);
+         }
+         for(int i : wl){
+            System.out.print(i);
+         }
+
+
 
     }
 
