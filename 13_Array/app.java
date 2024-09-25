@@ -75,21 +75,35 @@ int[] originalArray = new int[]{2,3,4,6,6,6,5,5,5,5,5,5,5,5,5,5,5,3,63,6,36,3,56
 //  ! KADANE 'S ALGO , T o(n) -- more efficient
 //  sare negative numbers agar huye to kam nahi akrega kadane 
 // Kadane(new int[]{-1,-2,-3});
-KadaneBetter(new int[]{-1,-2,-3});
+// KadaneBetter(new int[]{-1,-2,-3,3,5});
 
 
     }
 
-      public static void KadaneBetter(int arr[]){
+ public static void KadaneBetter(int arr[]){
 int ms = Integer.MIN_VALUE ;
 int cs = 0 ;
 
+boolean isAllNegative = true ;
+for( int i :arr){
+    if( i > 0 ){
+        isAllNegative = false ;
+        break; // gpt 
+    }
+}
+
+if(isAllNegative){
+   for(int i : arr){
+    ms = Math.max(ms ,i);
+   }
+} else {
 for(int i = 0 ; i <arr.length ; i++){
     cs = cs + arr[i];
     if(cs  <0){
         cs = 0;
     }
     ms = Math.max(cs ,ms) ;
+}
 }
 System.out.print(ms);
 
