@@ -1,10 +1,6 @@
 import java.util.*;
 public class java1{
 
-
-
-
-
 public static void main(String args[]){
 Scanner scnr = new Scanner(System.in);
 // long n = scnr.nextLong();
