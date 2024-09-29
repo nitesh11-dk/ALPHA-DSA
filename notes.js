@@ -16,8 +16,6 @@
 // ! part 7  - Operators
 
 
-
-
 // *  Types of Operators
 // *   Arithmetic Operators (Binary/Unary)
 // ? binary matlb  do operands hote hai , like a and b
