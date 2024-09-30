@@ -55,7 +55,7 @@ public class app {
 // ? method one // o(n) , o(n)
 // ReverseArrayM1(new int[]{2,3,4,5,6});
 // ? method two // by using binary search concept 
-int[] originalArray = new int[]{2,3,4,6,6,6,5,5,5,5,5,5,5,5,5,5,5,3,63,6,36,3,56,36,3,6,3,63,6,3,6,3,6,36,36,3,6,36,3,6,3,63,6,3,6,3,63,6,3,63,6,3,63,6,36,3,6,36,3,63,6,34,5,6};
+int[] originalArray = new int[]{2,3,4,6,6,6,5,5,5,5,5,5,3,63,6,34,5,6};
 // ReverseArrayM2(originalArray);
 
 
@@ -78,48 +78,38 @@ int[] originalArray = new int[]{2,3,4,6,6,6,5,5,5,5,5,5,5,5,5,5,5,3,63,6,36,3,56
 // KadaneBetter(new int[]{-1,-2,-3,3,5});
 
 //  ! Trapping ka
-Trapping_Rain_Water(new int[]{6,5,4,3});
+Trapping_Rain_Water(new int[]{4,2,0,6,3,2,5});
 
     }
 
-    public static void Trapping_Rain_Water( int arr[]){
-          int leftMaxBoundariesArray[] = new int[arr.length];
-          int rightMaxBoundariesArray[] = new int[arr.length];
 
- int max = Integer.MIN_VALUE ; 
-//  int max = arr[0]; 
-          for(int i = 0 ; i< arr.length ; i++){
-              if(max < arr[i]){
-               leftMaxBoundariesArray[i] = arr[i];
-               max = arr[i];
-              }else {
-               leftMaxBoundariesArray[i] = max;
-
-              }
-          }
-
-//   max = arr[arr.length-1]; 
-max = Integer.MIN_VALUE ;
-          for(int i = arr.length -1 ; i >= 0 ; i--){
-              if(max < arr[i]){
-               rightMaxBoundariesArray[i] = arr[i];
-               max = arr[i];
-              }else {
-               rightMaxBoundariesArray[i] = max;
-
-              }
-          }
-int wl[] = new int[arr.length];
-         for ( int i = 0 ; i<arr.length ; i++){
-              wl[i] = Math.min(leftMaxBoundariesArray[i],rightMaxBoundariesArray[i]);
-         }
-         for(int i : wl){
-            System.out.print(i);
-         }
-
-
-
+public static void Trapping_Rain_Water(int arr[]){
+    //  to calculate left max boundary 
+    int lefMax[] = new int [arr.length];
+    lefMax[0]  = arr[0];
+    for (int i = 1 ; i<arr.length; i++){
+        lefMax[i] = Math.max(lefMax[i-1] ,arr[i]);
     }
+    
+    //  to calculate right  max boundary 
+int rigMax[] = new int [arr.length];
+    rigMax[arr.length -1]  = arr[arr.length -1];
+    for (int i = arr.length -2 ; i>=0 ; i--){
+        rigMax[i] = Math.max(rigMax[i+1] ,arr[i]);
+    }
+    
+    //  loop 
+    int trappedWater = 0 ;
+     for (int i = 0 ; i<arr.length ; i++){
+            //  wl = min(left max boundaries , right max boundariess)
+          int wl = Math.min(lefMax[i] , rigMax[i]);
+                //  trapped water = waterlevel - height[i]
+          trappedWater += wl - arr[i];
+    }
+System.out.println(trappedWater);
+}
+
+
 
  public static void KadaneBetter(int arr[]){
 int ms = Integer.MIN_VALUE ;
