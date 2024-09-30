@@ -78,11 +78,36 @@ int[] originalArray = new int[]{2,3,4,6,6,6,5,5,5,5,5,5,3,63,6,34,5,6};
 // KadaneBetter(new int[]{-1,-2,-3,3,5});
 
 //  ! Trapping ka
-Trapping_Rain_Water(new int[]{4,2,0,6,3,2,5});
+// Trapping_Rain_Water(new int[]{4,2,0,6,3,2,5});
 
+//  buy and sell stocks 
+//  Sell_Buy_Share(new int[]{7,5,2,10});
     }
 
+public static void Sell_Buy_Share(int prices[]){
 
+ int buying_Price = Integer.MAX_VALUE ;
+ int maxProf = 0 ;
+
+ for(int i = 0; i<prices.length; i++){
+if(buying_Price < prices[i]){
+      int pf = prices[i] - buying_Price;
+       maxProf = Math.max(maxProf , pf);
+} else {
+    buying_Price = prices[i];
+
+}
+
+ }
+
+ 
+System.out.print(
+    "the max profit is " + maxProf
+); 
+} 
+ 
+
+// injustice 2
 public static void Trapping_Rain_Water(int arr[]){
     //  to calculate left max boundary 
     int lefMax[] = new int [arr.length];
@@ -339,7 +364,5 @@ for (int i : marks) {
             System.out.println("");
 
 }
-
-
 
 }
