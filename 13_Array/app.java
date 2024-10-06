@@ -99,8 +99,6 @@ if(buying_Price < prices[i]){
 }
 
  }
-
- 
 System.out.print(
     "the max profit is " + maxProf
 ); 
@@ -115,6 +113,8 @@ public static void Trapping_Rain_Water(int arr[]){
     for (int i = 1 ; i<arr.length; i++){
         lefMax[i] = Math.max(lefMax[i-1] ,arr[i]);
     }
+    
+
     
     //  to calculate right  max boundary 
 int rigMax[] = new int [arr.length];
