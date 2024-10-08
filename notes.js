@@ -123,7 +123,7 @@ O8che// !  Part - 6 - variables and data types
 
 //  ? Print reverse of a number ---  and also save it into a variable
 // * number ka last digit chahiye to num % 10 --> remainder se ho jayega
-// * number ka  last digit remove karna hoga to divide kardo 10 se num /10 ---> so hume deciaml milega aur hum use karge shirf integer by using the integer data typ
+// * number ka  last digit remove karna hoga to divide kardo 10 se num /10 ---> so hume deciaml milega aur hum use karge shirf integer by using the integer data type
 
 // public static --> access modifier -- in loop
 //  vo function jo hum classes ye yander likh hai yuse hum methods kahate hai
