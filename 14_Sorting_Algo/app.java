@@ -1,8 +1,11 @@
+ import java.util.Arrays;
+import java.util.Collections;
+
 class app{
 
     public static void main(String args[]){
 
-
+ 
 // ? Bubble sort
 // bubbleSort(new int[]{4,9,15,17,5,8});
 // bubbleSortM2(new int[]{1,2,3,4,5,6}); // also handles for average case 
@@ -24,9 +27,37 @@ class app{
 //      System.out.println(i);
 //  }
  
+//  ? Inbuilt Sort
+// import java.util.Arrays;
+// Arrays.sort(arr)
+// Arrays.sort(arr, startingIndex, EndingIndex)
+//  O(n log (N))
 
 
+// int[] res = {4,9,2,-2,17,5,8};
+// int[] res =new int[] {4,9,2,-2,17,5,8};
+// Arrays.sort(res);
+// System.out.print(Arrays.toString(res));
 
+// System.out.println(Arrays.toString(Arrays.sort(new int[]{4,9,15,17,5,8})));
+// * You can't write it in one line like that because Arrays.sort() returns void, not an array. It sorts the array in-place, meaning it modifies the original array.
+// * So, when you try to pass the result of Arrays.sort() to Arrays.toString(), the compiler complains because Arrays.toString() expects an array, but Arrays.sort() doesn't return anything (void).
+//  ? that means Arrays.sort() void retrun karta hai , aur hum arra .srot method ko dete hai vo really me change ya yusko sort kar deta hai 
+
+//  ! Coustom INdexes
+// Arrays.sort(arr, startingIndex, EndingIndex)
+// Arrays.sort(res, 0,5); // ye shirf pahale 5 values of array ko hii sort karega
+// System.out.print(Arrays.toString(res));
+
+//  ? decreasing order me karna hai to we use collections 
+// import java.util.Collections ;
+// int [] res = new int[]{4,9,2,-2,17,5,8};
+//  dekho yaha par collections.reverseOrder() ye method jo hai vo kam karte hai shrif obejcts par  aur hum use kar rahe hai staring se int --> that is primitive time so abb to use int as object we need  to decelare array with "Iterger " 
+
+Integer [] res = {4,9,2,-2,17,5,8};
+// Arrays.sort(res,Collections.reverseOrder());
+Arrays.sort(res,2,5,Collections.reverseOrder());
+System.out.print(Arrays.toString(res));
 
 
 
