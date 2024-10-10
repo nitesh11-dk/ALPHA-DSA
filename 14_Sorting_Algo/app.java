@@ -44,7 +44,7 @@ class app{
 // * So, when you try to pass the result of Arrays.sort() to Arrays.toString(), the compiler complains because Arrays.toString() expects an array, but Arrays.sort() doesn't return anything (void).
 //  ? that means Arrays.sort() void retrun karta hai , aur hum arra .srot method ko dete hai vo really me change ya yusko sort kar deta hai 
 
-//  ! Coustom INdexes
+//  ! Coustom Indexes
 // Arrays.sort(arr, startingIndex, EndingIndex)
 // Arrays.sort(res, 0,5); // ye shirf pahale 5 values of array ko hii sort karega
 // System.out.print(Arrays.toString(res));
