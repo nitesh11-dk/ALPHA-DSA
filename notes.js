@@ -109,31 +109,3 @@ O8che// !  Part - 6 - variables and data types
 
 
 
-// ! Remember : -
-// float marks =  99.99f; // yaha par f likhan jaruri hai qkii by deafult ye double hota hai keuu kii float hota hai 32bit (4byte) aur double hota hai  64-bit(8byte)
-
-//  ? charctes ko number me convert kiya ja sakta hai , lekin vo by deaflut diya gaya hai number like for 'a' it is 97 for 'b' it is  98 ... and for 'A' 65 ...
-
-//? agar y*(s/k) , yese yaha agar hume decialk me s/k ka result milato decial consider nahi hoge
-
-
-
-
-// ! Question based remeber
-
-//  ? Print reverse of a number ---  and also save it into a variable
-// * number ka last digit chahiye to num % 10 --> remainder se ho jayega
-// * number ka  last digit remove karna hoga to divide kardo 10 se num /10 ---> so hume deciaml milega aur hum use karge shirf integer by using the integer data type
-
-// public static --> access modifier -- in loop
-//  vo function jo hum classes ye yander likh hai yuse hum methods kahate hai
-
-
-//  parameter is what when you create while creating the function is called formal parameter of parameter
-
-//  argument is what when you call the function , and what values you pass with the fcuntion is called as actual parameter or argument
-// java me hamesa  call by value diya jata hai function me
-
-
-// ! function overolading
-// me same class there are   multiple function with the same name but with different parameter
