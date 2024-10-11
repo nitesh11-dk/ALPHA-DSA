@@ -54,17 +54,51 @@ class app{
 // int [] res = new int[]{4,9,2,-2,17,5,8};
 //  dekho yaha par collections.reverseOrder() ye method jo hai vo kam karte hai shrif obejcts par  aur hum use kar rahe hai staring se int --> that is primitive time so abb to use int as object we need  to decelare array with "Iterger " 
 
-Integer [] res = {4,9,2,-2,17,5,8};
-// Arrays.sort(res,Collections.reverseOrder());
-Arrays.sort(res,2,5,Collections.reverseOrder());
-System.out.print(Arrays.toString(res));
+// Integer [] res = {4,9,2,-2,17,5,8};
+// // Arrays.sort(res,Collections.reverseOrder());
+// Arrays.sort(res,2,5,Collections.reverseOrder());
+// System.out.print(Arrays.toString(res));
 
 
-
+// ? Counting Sort 
+//  it is used when the numbers cannot be high  and consider only positive number only (+- ve)
+// it is used only where the range is small
+//  quanity of element can be more , but the range is small or value is small 
+countingSort(new int[]{5,3,8,3,3,2,4});
 
 
     }
 
+    
+public static int[] countingSort(int arr[]){
+    int lengthMax = Integer.MIN_VALUE;
+    for(int i = 0 ; i < arr.length ; i++){
+        lengthMax = Math.max(lengthMax , arr[i]);
+    };
+
+    int count[] = new int [lengthMax+1];
+    for(int i = 0; i<arr.length ; i++){
+        count[arr[i]]++;
+    }
+
+    System.out.println(Arrays.toString(count));
+    int j =0 ;
+    for(int i = 0; i <count.length ; i++){
+        while(count[i]>0){
+            arr[j] = i;
+            count[i]--;
+            j++;
+        }
+    }
+    System.out.println(Arrays.toString(arr));
+    
+    
+    return arr;
+
+
+
+
+}
     public static int[] insertionSort(int arr[]){
         
         for(int i = 1; i< arr.length; i++){
