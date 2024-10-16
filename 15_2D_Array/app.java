@@ -73,12 +73,12 @@ public class App {
                 }
             }
 
-            // Move to the inner layer
+           
             rowStart++;
             rowEnd--;
             colStart++;
             colEnd--;
         }
-        System.out.println(); // Print a newline at the end
+        System.out.println(); 
     }
 }
