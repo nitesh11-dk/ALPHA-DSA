@@ -57,13 +57,53 @@ public class App {
             {13, 14, 15, 16} 
         } ;
 
+//  stairCaseS1(arr23, 16); // -->  from top right 
+//  stairCase(arr23, 16); // -->  from bottom left
+
+
     }
 
+   public static boolean stairCase(int arr[][], int key) {
+    int row = arr.length - 1;  // Start from the last row (bottom-left)
+    int col = 0;               // Start from the first column
 
-public static stairCaseS1(int arr[][] , int key ){
- 
-
+    while (row >= 0 && col < arr[0].length) {
+        if (arr[row][col] == key) {
+            System.out.println(row + " ," + col);
+            return true;
+        } else if (arr[row][col] > key) {
+            row--;  // Move up
+        } else {
+            col++;  // Move right
+        }
+    }
+    return false;
 }
+
+
+public static boolean stairCaseS1(int arr[][] , int key ) {
+ int row = 0 ;
+ int col = arr[0].length - 1;
+
+while(row < arr.length && col >= 0){
+    if(arr[row][col] == key){
+        System.out.println(row + " ," + col);
+        return true;
+        
+    }
+    else if(arr[row][col] > key){
+        col--;
+    }
+    else{
+        row++;
+    }
+}
+return false;
+}
+
+
+
+
 
 public static void diagonalTraversal(int arr[][]) {
     //  PD : i == j
