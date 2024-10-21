@@ -85,14 +85,64 @@ System.out.println(sb.append("World"));
 for (char c= 'a' ; c<='z' ; c++){
     sb.append(c);
 }
-    System.out.println(sb); // TO(n) , if you are using a string here then the time complexity will be O(n *n)
+    // System.out.println(sb); // TO(n) , if you are using a string here then the time complexity will be O(n *n)
     // System.out.print(sb.length());
     
 
 // we can use .tostring methods on objects , just rememeber on object  it means it will  only work for Integer not for int okay 
 
+// Question 4
+// For a given String convert each the first letter of each
+// word to uppercase.
+// "hi, i am shradha"
+// System.out.print(toUpper("hello keses ho app "));
+
+// Question 5
+// String Compression
+// "a3b2c3d2"
+// "aaabbcccdd"
+//  agar single time ara hai to direct print karna hai 
+System.out.print(compress("aaaaaabbcccdd"));
 
 
+    }
+
+    public static String compress(String str){
+        StringBuilder sb = new StringBuilder("");
+        int count = 1 ; 
+          for(int i = 0 ; i<str.length() ; i++){
+              while(i<str.length()-1 && str.charAt(i) == str.charAt(i+1)){
+                  count++;
+                  i++; // yaha par i++ kiya hai so Time o(n)hoga qkii loop string ke legth ke barabar hii chal raha hai 
+              };
+              if(count == 1){
+                  sb.append(str.charAt(i));
+              }else{
+                  sb.append(str.charAt(i)).append(count);
+              }
+              count = 1 ;
+          } 
+          return sb.toString();
+    }
+
+    public static String toUpper(String str){
+        StringBuilder sb = new StringBuilder("");
+
+            char c = Character.toUpperCase(str.charAt(0));
+            sb.append(c);
+
+            for(int i = 1 ; i < str.length() ; i++){    
+                if(str.charAt(i) == ' ' && i < str.length() -1 ){
+                    sb.append(str.charAt(i));
+                    i++ ;
+                    sb.append(Character.toUpperCase(str.charAt(i)));
+                }else{
+                    sb.append(str.charAt(i));
+                    
+                }
+            }
+
+        return sb.toString();
 
     }
 
