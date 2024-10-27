@@ -8,7 +8,6 @@ public class app {
 // ?  left shift << 
 //   a<<b  = a * 2^b
 // System.out.print(<<2);
-
 // ?  right shift >> 
 //   a>>b  = a / 2^b
 // System.out.print(>>2);
@@ -20,7 +19,5 @@ if((n&1)==1){
     System.out.print("even");
     
 }
- 
-        
     }
 }
