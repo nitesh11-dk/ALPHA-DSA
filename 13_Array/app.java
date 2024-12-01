@@ -1,5 +1,5 @@
-import java.util.*; // nodemon error dera hai agar * use kiya to like code ko repeated way mee run kiya to  
-
+import java.util.*; 
+  
 public class app {
 
 
@@ -343,26 +343,4 @@ System.out.print("[");
         }
 
 System.out.println("]");
-}
-
-
-public static void update(Scanner scnr , int marks[]){
-// Scanner scnr = new Scanner(System.in);
-    for(int i = 0 ; i < marks.length ; i++){
-        System.out.println("Enter the vlaue for index " + i);
-   marks[i] = scnr.nextInt();     
-    }
-
-    //  for(int i = 0 ; i < marks.length ; i++){
-    //     System.out.print(" the vlaue are " + marks[i]);
-    // }
-
-            System.out.println("The elements in the array are :-");
-for (int i : marks) {
-            System.out.print(i + " ");
-        }
-            System.out.println("");
-
-}
-
 }
