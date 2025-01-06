@@ -52,8 +52,8 @@ float f = 3.14f;
 double d = 99.9954;
 
 //  answer is double because it has floationg data also and here double  have the highest size and it is datatype which have deciamal points 
-
 //  double result = (f * b) + (i % c) - (d*s);
+
 //  System.out.println(result);
 
 

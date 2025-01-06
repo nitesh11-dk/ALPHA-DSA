@@ -24,8 +24,6 @@ public class java1 {
 //    with the line in the end 
  System.out.println("Hello Proffesor");
 
-//    with the line in the end 
- System.out.println("Hello Proffesor \n");
 
 
 
@@ -77,16 +75,6 @@ float flt = 13.34f; // be deafult ye double treat hoga so appko 13.34 f likhna p
 double fltr = 13.34 ;
 
 // System.out.print(lng) ;
-
-
-
-
-
-
-
-
-
-
 
     }
 }
