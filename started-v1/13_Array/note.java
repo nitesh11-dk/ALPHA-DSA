@@ -1,7 +1,6 @@
 //*   Decelaring array 
 
 //    ? Valid 
- // int arr[] = new int{2, 4, 5, 6, 7, 8, 9, 10};
  // int arr[] = {2, 4, 5, 6, 7, 8, 9, 10};
  // int[] arr  = {2,4,5,6}	;
 // int   arr []    = {2,3,4};
