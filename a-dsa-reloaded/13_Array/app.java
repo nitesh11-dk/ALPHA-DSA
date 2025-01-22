@@ -180,6 +180,20 @@ for(int  i =0 ; i < heights.length ; i++){
 System.out.println("Trapped Water : " + trappedwater);
 }
 
+public static void buySellStock(int prices[]){
+    int bp  =Integer.MAX_VALUE ;
+    int maxProfit = 0 ;
+    for(int i = 0 ; i < prices.length ; i++){
+        if(bp < prices[i]){
+            int todayProfit = prices[i] - bp ;
+            maxProfit = Math.max(maxProfit, todayProfit);            
+        } else {
+            bp = prices[i];
+        }
+    }
+    System.out.println("Max Profit : " + maxProfit);
+
+}
 
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
@@ -216,7 +230,7 @@ System.out.println("Trapped Water : " + trappedwater);
 // hete the toal subarrays = sum of n numbers = n(n+1)/2
 
 //!   ? 14  prefix array 
- prefixArray(new int []{ 1,-2,6,-1,3});
+//  prefixArray(new int []{ 1,-2,6,-1,3});
 //  ? tc = o(n**2) 
 
 // !   15  Kadane's Algorithm
@@ -231,7 +245,7 @@ System.out.println("Trapped Water : " + trappedwater);
 // ? tc = o(n)
 
 // ! Tadakata badhakta
-// ?  Trapping Rainwater
+// ? 16 Trapping Rainwater
 // Given n non-negative integers representing an elevation
 // map where the width of each bar is 1, compute how much
 // water it can trap after raining.
@@ -240,9 +254,21 @@ System.out.println("Trapped Water : " + trappedwater);
 //  trapped water = (waterlevel - bar height) * width ;
 // ? to calulate water level  we have to take the right maax and leftmax then mimnimum of them 
 //  * waterlevel =  min(leftmax , rightmax) 
-trappedWater(new int []{4,2,0,6,3,2,5});
+// trappedWater(new int []{4,2,0,6,3,2,5});
 //  * tc = o(n)
 //  ? to claulate the max right and maxleft stuff we sue auxillary array  / helper array 
+
+
+// ? 18  Buy & Sell Stocks
+// You are given an array prices where prices[il is the price of a given stock
+// on the ith day. You want to maximize your profit by choosing a single day to
+// buy one stock and choosing a different day in the future to sell that stock.
+// Return the maximum profit you can achieve from this transaction. If you
+// cannot achieve any profit, return 0.
+
+buySellStock(new int[]{7,1,5,3,6,4,10});
+
+
 
 
     }
