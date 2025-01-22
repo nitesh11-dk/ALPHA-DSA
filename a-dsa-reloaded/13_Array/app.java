@@ -111,6 +111,41 @@ System.out.println("Max Sub Array : " + max);
 System.out.println("Min Sub Array : " + min);
 }
 
+public static void prefixArray(int arr[]){
+    // prefix array 
+    int pre[] = new int[arr.length] ;
+    int max = Integer.MIN_VALUE;
+    pre[0]= arr[0] ;
+    for(int i = 1 ; i < arr.length ; i++){
+        pre[i] = pre[i-1] + arr[i] ;
+    }
+
+    for(int i = 0 ; i < arr.length ; i++){
+
+        for(int j=0 ; j< arr.length ; j++){
+         int sum = i ==0 ? pre[j] : pre[j] - pre[i-1] ; 
+            if(max < sum){
+                max = sum ;
+            }
+        }
+    }
+    System.out.println("Max Sub Array : " + max);
+}
+
+public static void kadaneArray( int arr[]){
+    int cs = 0 ;
+    int max = Integer.MIN_VALUE;
+    for(int i = 0 ; i < arr.length ; i++){
+        cs += arr[i] ;
+        if(max < cs){
+            max = cs ;
+        }
+         if(cs < 0){
+            cs = 0 ;
+        }
+    }
+    System.out.println("Max Sub Array : " + max);
+}
 
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
@@ -141,10 +176,23 @@ System.out.println("Min Sub Array : " + min);
 // ? sum of total pairs =  n(n-1)/2
 // ? tc = o(n**2)
 
-// ? 12 Print Sub arrays 
+// ? 12 & 13(BruteForce) Print Sub arrays 
 // a continouse part of array 
- subArray(new int []{2,3,4,5,6,}); // tc = o(n**3)
+//  subArray(new int []{1,-2,6,-1,3}); // *  tc = o(n**3)
 // hete the toal subarrays = sum of n numbers = n(n+1)/2
+
+//!   ? 14  prefix array 
+ prefixArray(new int []{ 1,-2,6,-1,3});
+//  ? tc = o(n**2) 
+
+// !   15  Kadane's Algorithm
+//  +ve + +ve == +ve
+// +Ve + ve = +ve
+// +ve + -Ve = -ve
+// agar choti si negaive number ari hai to yusko zero hii consider karlo 
+kadaneArray(new int[]{-2,-3,4,-1,-2,1,5,-3});
+//  ? drawback is if all the numbers are -ve then it doesn't work 
+
 
 
     }
