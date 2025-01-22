@@ -73,7 +73,6 @@ public static int[]   ReverseArray(int arr[]){
          last --;
     }
     return arr ;
-
 }
 
 public static void PairsArr(int arr[]){
@@ -85,6 +84,33 @@ public static void PairsArr(int arr[]){
  }
 
 }
+
+public static void subArray(int arr[]){
+    int total = 0 ;
+    int max = Integer.MIN_VALUE;
+    int min = Integer.MAX_VALUE;
+    for(int i = 0 ; i < arr.length ; i++){
+        for(int j =i ; j < arr.length ; j++){
+            int sum =0;
+            for(int k = i ; k<=j;k++){
+                // System.out.print(arr[k] + " ");
+                sum += arr[k];
+            }
+            if(max < sum){
+                max = sum ;
+            } 
+            if(min > sum){
+                min = sum ;
+            }
+            total++;
+        }
+}
+
+// System.out.println("Total Sub Array : " + total);
+System.out.println("Max Sub Array : " + max);
+System.out.println("Min Sub Array : " + min);
+}
+
 
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
@@ -110,12 +136,15 @@ public static void PairsArr(int arr[]){
 // ? Reverse of an array 
 // printArr(ReverseArray(new int []{1,2,3,4,5,6}));
 
-// ? Pairs  in an array 
+// ? 11 Pairs  in an array 
 // PairsArr(new int[]{2,4,6,8,10});
 // ? sum of total pairs =  n(n-1)/2
 // ? tc = o(n**2)
 
-
+// ? 12 Print Sub arrays 
+// a continouse part of array 
+ subArray(new int []{2,3,4,5,6,}); // tc = o(n**3)
+// hete the toal subarrays = sum of n numbers = n(n+1)/2
 
 
     }
