@@ -147,6 +147,40 @@ public static void kadaneArray( int arr[]){
     System.out.println("Max Sub Array : " + max);
 }
 
+
+public static void trappedWater(int heights[]){
+
+//   right auxillary array
+//  left auxillary array
+// ? loop  
+//  waterlevel  =min(leftmax, rightmax)
+// trapped water =( waterlevel - current height) * width ;
+
+
+// !  left auxillary array 
+int lft[]= new int[heights.length] ;
+lft[0] = heights[0] ;
+for(int i = 1 ; i < heights.length ; i++){
+    lft[i] = Math.max(lft[i-1], heights[i]);
+}
+
+//! right auxillary array
+int rft[]= new int[heights.length] ;
+rft[heights.length-1] = heights[heights.length-1] ;
+for(int i = heights.length-2 ; i >= 0 ; i--){
+    rft[i] = Math.max(rft[i+1], heights[i]);
+    }
+
+// ! ? Loop a
+int trappedwater = 0 ; 
+for(int  i =0 ; i < heights.length ; i++){
+    int waterlevel = Math.min(lft[i], rft[i]);
+     trappedwater += waterlevel - heights[i] ;
+}
+System.out.println("Trapped Water : " + trappedwater);
+}
+
+
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
 
@@ -190,9 +224,25 @@ public static void kadaneArray( int arr[]){
 // +Ve + ve = +ve
 // +ve + -Ve = -ve
 // agar choti si negaive number ari hai to yusko zero hii consider karlo 
-kadaneArray(new int[]{-2,-3,4,-1,-2,1,5,-3});
+// kadaneArray(new int[]{-2,-3,4,-1,-2,1,5,-3}); 
+//  * tc = o(n)
 //  ? drawback is if all the numbers are -ve then it doesn't work 
+// ? yak loop lagake check karlo ki sare negaive number hain kya , then vo array me se  smaallest negaive number nikalo 
+// ? tc = o(n)
 
+// ! Tadakata badhakta
+// ?  Trapping Rainwater
+// Given n non-negative integers representing an elevation
+// map where the width of each bar is 1, compute how much
+// water it can trap after raining.
+
+
+//  trapped water = (waterlevel - bar height) * width ;
+// ? to calulate water level  we have to take the right maax and leftmax then mimnimum of them 
+//  * waterlevel =  min(leftmax , rightmax) 
+trappedWater(new int []{4,2,0,6,3,2,5});
+//  * tc = o(n)
+//  ? to claulate the max right and maxleft stuff we sue auxillary array  / helper array 
 
 
     }
