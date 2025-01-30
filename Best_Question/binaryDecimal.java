@@ -1,4 +1,4 @@
-public class app{
+public class binaryDecimal{
 
      public static int bianryToDecimal(int binaryNumber){
          int decimalNumber   = 0 ; 
