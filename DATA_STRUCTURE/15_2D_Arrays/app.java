@@ -18,8 +18,13 @@ public class app {
         // *  only n =m 
         //  > LT to BR --> Primary diagonal  == i ==j
         // RT to LB --> Secondary diagonal == i+j ==n-1 
-        diagonalSum(matrix);
-        
+        // diagonalSum(matrix);
+
+        //  ? searching in 2d array which is sorted 
+        //  it is sorted in row wise as well as column wise 
+         stairCaseSearch(matrix , 10);
+        //  ? time comp -> n>>m --> o(n) lly m>>n o(m)
+        //  so o(n+m) 
     }
 
     public static void spiralMat(int arr[][]) {
@@ -91,5 +96,24 @@ for(int i = 0; i<arr.length;i++){
     // System.out.print(sum);
 }
 
+public static void stairCaseSearch(int arr[][] , int tar){
+
+    int row = 0 ;
+    int col = arr[0].length-1 ;
+
+    while(row <arr.length && col>=0){
+        if(arr[row][col] ==tar){
+            System.out.print("Found at ["+row+" ,"+ col+ "] ");
+            break;
+        }
+        else if(tar < arr[row][col]){
+            col--;
+        }
+        else{
+            row++;
+        }
+    }
+    System.out.println("key not found");
+}
 
 }
