@@ -71,12 +71,33 @@ public class app {
       String fruits[] = { "apple", "grapes", "watermelon", "zedex" };
       // System.err.println(printLargest(fruits));
 
-// ! String Builder 
+      // ! String Builder
+      // the difference inthe string builder is that it is mutable , and the changes
+      // can be done in the same memeory refecne where the string is ceeated
+      // toString() , can convert any object to string but
+      // int a = 10 ;
+      // a.toString() cannot be done because it the int is a primitive type insted we
+      // can
+      // Integer a = 120 ;
+      // a.toString()it will done no issue
+      StringBuilder sb = new StringBuilder("Hello kese ho ");
+      // System.err.println(sb);
+      for (char ch = 'a'; ch <= 'z'; ch++) {
+         sb.append(ch);
+      }
+      // System.err.println(sb);
+      // The time complexity is 0(n)
+      // The time complexity is 0(n**2) if string
 
+      // !Question 4
+      // For a given String convert each the first letter of each word to uppercase.
+      // "hi, i am shradha"
+      // System.err.println(convetToUc("hello kese ho"));
 
-
-
-
+      // ! Question 5
+      // String Compression
+      // * "aaabbcccdd" --> "a3b2c3d2"
+      System.err.println(stringCompression("aaabbcccdd"));
 
    }
 
@@ -134,8 +155,40 @@ public class app {
       return largest;
    }
 
+   public static String convetToUc(String str) {
+      StringBuilder sb = new StringBuilder("");
+      char ch = Character.toUpperCase(str.charAt(0));
+      sb.append(ch);
+      for (int i = 1; i < str.length(); i++) {
+         if (str.charAt(i) == ' ' && i < str.length() - 1) {
+            sb.append(str.charAt(i));
+            i++;
+            sb.append(Character.toUpperCase(str.charAt(i)));
+         } else {
+            sb.append(str.charAt(i));
+         }
+      }
+      String str2 = sb.toString();
 
+      return str2;
+   }
 
+   public static String stringCompression(String str) {
+      StringBuilder sb = new StringBuilder("");
 
+      for (int i = 0; i < str.length(); i++) {
+         Integer count = 1;
+         while (i < str.length() - 1 && str.charAt(i) == str.charAt(i + 1)) {
+            count++;
+            i++;
+         }
+         sb.append(str.charAt(i));
+         if (count > 1) {
+            sb.append(count.toString());
+         }
+      }
+      return sb.toString();
+
+   }
 
 }
