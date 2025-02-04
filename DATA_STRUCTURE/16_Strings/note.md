@@ -165,3 +165,93 @@ public static String subString(String str, int start, int end) {
 StringBuilder sb = new StringBuilder("Hello");
 sb.append(" World!");
 ```
+
+### **String Pool aur Heap Memory ka Difference**  
+
+#### 1️⃣ **String Pool (Intern Pool)**  
+- **Kya hai:** String pool JVM ke andar ka ek special memory area hai jo strings ko store karta hai.  
+- **Kaise kaam karta hai:** Jab tum koi string literal (`String s = "hello";`) likhte ho toh JVM check karta hai ki pool me wahi string pehle se hai ya nahi. Agar hai, toh wahi reference de deta hai, nayi memory allocate nahi karta. Agar nahi hai, toh nayi string ko pool me store kar deta hai.  
+- **Immutable Strings:** Pool ka benefit tab aata hai jab strings immutable hote hain — unka value badal nahi sakta.
+
+#### Example:
+```java
+String s1 = "hello";
+String s2 = "hello";
+System.out.println(s1 == s2); // true (same reference from pool)
+```
+
+#### 2️⃣ **Heap Memory**  
+- **Kya hai:** Heap memory ek large memory space hoti hai jaha objects dynamically allocate hote hain, including strings created using `new`.  
+- **Kaise kaam karta hai:** Jab `new` keyword ka use karke string banate ho (`String s = new String("hello");`), toh JVM hamesha nayi memory allocate karta hai heap me, chahe wahi string pool me already ho ya nahi.  
+
+#### Example:
+```java
+String s3 = new String("hello");
+String s4 = new String("hello");
+System.out.println(s3 == s4); // false (different objects in heap)
+```
+
+# INtern
+1️⃣ **Agar String pool me already hai:**  
+- `intern()` us existing string ka **reference** return kar deta hai.  
+
+2️⃣ **Agar String pool me nahi hai:**  
+- `intern()` us string ko **pool me add** karta hai aur uska reference return kar deta hai.
+
+---
+
+### **Example Samajho:**
+```java
+public class InternExample {
+    public static void main(String[] args) {
+        String s1 = new String("hello");
+        String s2 = "hello";
+
+        // Pool reference lene ki koshish
+        String s3 = s1.intern();
+
+        System.out.println(s1 == s2); // false (heap vs pool)
+        System.out.println(s2 == s3); // true (pool reference)
+    }
+}
+```
+
+### **Difference Between StringBuffer and StringBuilder**  
+
+
+-Java mein String immutable hoti hai, matlab uska content change nahi ho sakta. Jab hume mutable string chahiye hoti hai (jo modify ki ja sake) tab hum StringBuffer ka use karte hain.
+
+| **Feature**        | **StringBuffer**               | **StringBuilder**           |
+|--------------------|----------------------------------|-----------------------------|
+| **Thread Safety**   | Thread-safe (synchronized)     | Not thread-safe            |
+| **Performance**     | Slower due to synchronization  | Faster without synchronization |
+| **Mutable**         | Yes                            | Yes                         |
+| **Introduced In**   | Java 1.0                       | Java 1.5                    |
+
+---
+
+### **In Simple Terms:**  
+1. **StringBuffer:**  
+   - Safer for multi-threaded environments.  
+   - Slower because it synchronizes methods (`append()`, `insert()`, etc.).  
+
+2. **StringBuilder:**  
+   - Best for single-threaded operations.  
+   - Faster since it doesn't have synchronization overhead.  
+
+---
+
+### **Example:**
+```java
+public class BufferBuilderExample {
+    public static void main(String[] args) {
+        StringBuffer sb1 = new StringBuffer("Hello");
+        sb1.append(" World");
+        System.out.println("StringBuffer: " + sb1); // Output: Hello World
+
+        StringBuilder sb2 = new StringBuilder("Hello");
+        sb2.append(" World");
+        System.out.println("StringBuilder: " + sb2); // Output: Hello World
+    }
+}
+```
