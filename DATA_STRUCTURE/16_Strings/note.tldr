@@ -108,29 +108,6 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 574,
-			"y": 532,
-			"rotation": 0,
-			"isLocked": false,
-			"opacity": 1,
-			"meta": {},
-			"id": "shape:nLZKLIWOLaTFF5yo52K-v",
-			"type": "text",
-			"props": {
-				"color": "black",
-				"size": "m",
-				"w": 66.046875,
-				"text": "HEAP",
-				"font": "draw",
-				"textAlign": "start",
-				"autoSize": true,
-				"scale": 1
-			},
-			"parentId": "page:page",
-			"index": "a35oL",
-			"typeName": "shape"
-		},
-		{
 			"x": 224,
 			"y": 568,
 			"rotation": 0,
@@ -506,8 +483,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 327,
-			"y": 429,
+			"x": 230.19474637888396,
+			"y": 425.0862057916921,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -529,8 +506,8 @@
 					"a26wk": {
 						"id": "a26wk",
 						"index": "a26wk",
-						"x": 234,
-						"y": -124
+						"x": -182.43181248346752,
+						"y": -116.17241158338419
 					}
 				},
 				"scale": 1
@@ -540,8 +517,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 569,
-			"y": 275,
+			"x": -84.86859741973637,
+			"y": 254.1264149637551,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -668,8 +645,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 371,
-			"y": 602,
+			"x": 369.43046914878755,
+			"y": 575.90805453655,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -2190,24 +2167,46 @@
 			"typeName": "shape"
 		},
 		{
+			"x": -798.80645307475,
+			"y": 826.9400233441158,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:JyHb-OEfOyigs163MgsB7",
+			"type": "text",
+			"props": {
+				"color": "yellow",
+				"size": "l",
+				"w": 1017.640625,
+				"text": "StringBuilder sb = new StringBuilder(\"Hello kese ho \");\nSystem.err.println(sb);\nfor(char ch = 'a';ch<='z';ch++){\n   sb.append(ch);\n}\nSystem.err.println(sb);\n// The time complexity is 0(n)\n// The time complexity is 0(n**2) if string",
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 0.5485102245362086
+			},
+			"parentId": "page:page",
+			"index": "ae17m",
+			"typeName": "shape"
+		},
+		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": -651.7940096426385,
-			"y": 935.7963944519158,
-			"lastActivityTimestamp": 1738465519987,
+			"x": 455.70740569574497,
+			"y": 749.6824147025925,
+			"lastActivityTimestamp": 1738636385553,
 			"meta": {}
 		},
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
 			"stylesForNextShape": {
-				"tldraw:size": "l",
-				"tldraw:color": "yellow"
+				"tldraw:geo": "rectangle"
 			},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
-				"type": "move",
+				"type": "default",
 				"rotation": 0
 			},
 			"isFocusMode": false,
@@ -2249,7 +2248,7 @@
 			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:JyHb-OEfOyigs163MgsB7"
+				"shape:IWBYs6u-2J5BTbdSzrEyd"
 			],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
@@ -2261,34 +2260,122 @@
 			"typeName": "instance_page_state"
 		},
 		{
-			"x": 1534.6628263239038,
-			"y": -154.61925221953874,
-			"z": 0.36056694604404227,
+			"x": 504.74170619090563,
+			"y": -300.9006947418881,
+			"z": 0.6387663395007296,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
 		},
 		{
-			"x": -798.80645307475,
-			"y": 826.9400233441158,
+			"x": -180.93638848793086,
+			"y": 197.83744966182525,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
 			"meta": {},
-			"id": "shape:JyHb-OEfOyigs163MgsB7",
+			"id": "shape:P67THtbNt91GYPVAggIJc",
+			"type": "geo",
+			"props": {
+				"w": 293.26955321496973,
+				"h": 187.86212199877974,
+				"geo": "rectangle",
+				"color": "black",
+				"labelColor": "black",
+				"fill": "none",
+				"dash": "draw",
+				"size": "m",
+				"font": "draw",
+				"text": "",
+				"align": "middle",
+				"verticalAlign": "middle",
+				"growY": 0,
+				"url": "",
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "af2BQ",
+			"typeName": "shape"
+		},
+		{
+			"x": -192.67777111285454,
+			"y": 303.50989328613883,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:iNL5VZEnpJ-muBE-hZLJP",
+			"type": "arrow",
+			"props": {
+				"dash": "draw",
+				"size": "m",
+				"fill": "none",
+				"color": "black",
+				"labelColor": "black",
+				"bend": 0,
+				"start": {
+					"x": 0,
+					"y": 0
+				},
+				"end": {
+					"x": -85.06387099619224,
+					"y": 33.919557767969934
+				},
+				"arrowheadStart": "none",
+				"arrowheadEnd": "arrow",
+				"text": "",
+				"labelPosition": 0.5,
+				"font": "draw",
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "agA8O",
+			"typeName": "shape"
+		},
+		{
+			"x": -336.4485671776176,
+			"y": 343.95242547601924,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:8hkZNoYGOU0ol_blsBT9I",
 			"type": "text",
 			"props": {
-				"color": "yellow",
-				"size": "l",
-				"w": 1017.640625,
-				"text": "StringBuilder sb = new StringBuilder(\"Hello kese ho \");\nSystem.err.println(sb);\nfor(char ch = 'a';ch<='z';ch++){\n   sb.append(ch);\n}\nSystem.err.println(sb);\n// The time complexity is 0(n)\n// The time complexity is 0(n**2) if string",
+				"color": "black",
+				"size": "m",
+				"w": 63.35676956176758,
+				"text": "Heap",
 				"font": "draw",
 				"textAlign": "start",
 				"autoSize": true,
-				"scale": 0.5485102245362086
+				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "ae17m",
+			"index": "ah4oB",
+			"typeName": "shape"
+		},
+		{
+			"x": 539.8154537118107,
+			"y": 526.7815917969867,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:nLZKLIWOLaTFF5yo52K-v",
+			"type": "text",
+			"props": {
+				"color": "black",
+				"size": "m",
+				"w": 136.61196899414062,
+				"text": "String pool",
+				"font": "draw",
+				"textAlign": "start",
+				"autoSize": true,
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "a35oL",
 			"typeName": "shape"
 		}
 	]
