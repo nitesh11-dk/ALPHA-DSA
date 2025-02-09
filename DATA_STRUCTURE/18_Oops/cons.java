@@ -26,12 +26,19 @@ public class cons {
         clv2.password = "xyz";
         clv.marks[1] =55 ; // array ka refernce jara hai , but obj hoga to yuska vhi hoga  ;
 
-         for(int i = 0 ; i < clv2.marks.length;i++){
-            System.out.println(clv.marks[i]);
-         }
+        //  for(int i = 0 ; i < clv2.marks.length;i++){
+        //     System.out.println(clv.marks[i]);
+        //  }
+    Fish fsh = new Fish();
+    fsh.eat(); // this is called inehritance 
+        
     }
+    
 
 }
+
+//  * Java handles destructing automatically 
+
 
 class Student {
     String name;
@@ -57,5 +64,25 @@ class Student {
         this.roll = roll;
         // system out println();
     }
+
+}
+
+// Inheritance 
+
+class Animal{
+String color ;
+
+void eat(){
+    System.out.println("easts");
+}
+
+}
+
+class Fish extends Animal{
+    int fins ;
+    void swim(){
+        System.out.println("swims in water");
+    }
+
 
 }
