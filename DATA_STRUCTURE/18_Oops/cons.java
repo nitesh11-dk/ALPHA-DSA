@@ -29,6 +29,29 @@ public class cons {
         //  for(int i = 0 ; i < clv2.marks.length;i++){
         //     System.out.println(clv.marks[i]);
         //  }
+
+        // ! inheritance 
+        //? single level inheritance 
+        //? Multi level inheritance
+        // ? Hirerarchial inheritance
+        // ? hybrid inheritance 
+        //  * Multiple inhertiaance , 2 class se yak single class bana -- ( Interface)
+        // ! Polymorishm 
+        // ? Compile time polymorphism - method overloading
+        // ? run time  polymorphism - method overriding
+
+//  !  method overrloading or function overloading 
+//  multiple  function having the same name but differernt paramter is called  function overloading
+
+//  !  method overriding 
+//  * parant and child clasees both contain the same function with a different definition 
+
+// ! Packgages in java 
+//  * packgae is  a group of similar types of classes , interfaces  , and sub-packages
+ 
+
+
+
     Fish fsh = new Fish();
     fsh.eat(); // this is called inehritance 
      
