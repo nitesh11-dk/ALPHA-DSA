@@ -31,7 +31,8 @@ public class cons {
         //  }
     Fish fsh = new Fish();
     fsh.eat(); // this is called inehritance 
-        
+     
+    
     }
     
 
