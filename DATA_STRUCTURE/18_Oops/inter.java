@@ -15,22 +15,29 @@ Queen  q = new Queen();
 
 // ! multiple inheritance using interface 
 Child child = new Child();
-        child.showFatherTraits();  // Inherited from Father
-        child.showMotherTraits();  // Inherited from Mother
-        child.showChildTraits();   // Child's own method
+        // child.showFatherTraits();  // Inherited from Father
+        // child.showMotherTraits();  // Inherited from Mother
+        // child.showChildTraits();   // Child's own method
 
 
 //  ? Static keyword 
 // static keyword  in java is used to share the same variable or method of a given class 
-Student s1= new Student();
-s1.setName("ayush");
-s1.getName();
-s1.schoolName = "lions clubb" ; // ye static hoga yani ki same reference hoga sare object jo studnet class se bani hai 
+// Student s1= new Student();
+// s1.setName("ayush");
+// s1.getName();
+// s1.schoolName = "lions clubb" ; // ye static hoga yani ki same reference hoga sare object jo studnet class se bani hai 
 Student s2 = new Student();
-System.out.println(s2.schoolName); // name same hai school ka 
-System.out.println(s1.returnPercentage(2,40, 50));
+// System.out.println(s2.schoolName); // name same hai school ka 
+// System.out.println(s1.returnPercentage(2,40, 50));
 
 //  ? we can aslo make block and nested classes , but it is not asked in interview so , ... 
+
+//  ! Super , is used to refer immediate parent class object 
+//  - to access parent properties , function and constrctor 
+ Teacher t1 = new Teacher("Tushar");
+//  System.out.println(t1.name);
+
+
     }
 }
 
@@ -99,3 +106,26 @@ class Student {
         return (m + s+e)/3;
     } 
 }
+
+class User{
+    String name ;
+    User(String name){
+     this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+class Teacher extends User {
+
+    Boolean canTeach ;
+    Teacher(String name){
+        super(name);
+        this.canTeach = true ;
+    }
+
+}
+
+
