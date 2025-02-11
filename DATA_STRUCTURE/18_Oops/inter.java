@@ -46,18 +46,21 @@ interface ChessPlayer{
 }
 
 class Queen implements ChessPlayer{
+    @Override
     public void moves(){
         System.out.println("up down left down,diagonal in all four direction");
     }
 }
 
 class Rook implements ChessPlayer{
+    @Override
     public void moves(){
         System.out.println("up down left down");
     }
 }
 
 class King implements ChessPlayer{
+    @Override
     public void moves(){
         System.out.println("up down left down,diagonal by one step");
     }
