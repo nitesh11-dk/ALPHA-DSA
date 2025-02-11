@@ -22,6 +22,7 @@ This checks the value of the bit at a given position.
 
 ```java
 public static void getBit(int n, int pos) {
+    // number & 000001 00(1<<i)
     int bitMask = 1 << pos;
     if ((n & bitMask) == 0) {
         System.err.println(0); 
@@ -40,6 +41,7 @@ This sets a specific bit to `1`.
 
 ```java
 public static int setBit(int n, int pos) {
+    // number | 000001000(1<<i)
     int bitMask = 1 << pos;
     return n | bitMask; // Set the bit at position pos to 1
 }
