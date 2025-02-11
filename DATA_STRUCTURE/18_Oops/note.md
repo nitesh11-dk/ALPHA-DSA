@@ -31,6 +31,8 @@ class Student {
 }
 ```
 
+### no class in java can be private or  protected , but you can creaate nested classes 
+## parent ref = child obj , child ref != parent obj 
 ---
 
 ## **🛠️ Understanding Encapsulation in Java**  
