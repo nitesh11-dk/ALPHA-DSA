@@ -21,13 +21,6 @@ public class abs {
 // System.out.println(h.color);
 
 
-// ! INterfaces  ( Multiple inhertiance )
-//  class is the blueprint for creating objects 
-//  interface is the blueprint for creating classes 
-//  100% abstraction and multiple inheritaance 
-//   - all methods are public , abstract and without implementation 
-//  - used to achieve toatl abstraction 
-//  _ variables in the interface are final , public and static 
 
 
     }
