@@ -17,7 +17,16 @@ public class app {
             return 1;
         }
     //  int factorial = 1;
-    int fn = num * fact(num -1); 
+    int fn = num + fact(num -1); 
+         return fn;
+    }
+
+      public static  int sumOfN(int num){
+      if(num == 1 ){ 
+            return 1;
+        }
+
+    int fn = num + fact(num -1); 
          return fn;
     }
 
@@ -27,7 +36,9 @@ public class app {
         // printNum(10);
 
 //  ! factorial of a number 
-        System.out.print(fact(4));
+        // System.out.print(fact(4));
+        //  ! sum of n numbers 
+        System.out.print(sumOfN(5));
 
 
         
