@@ -4,10 +4,34 @@ public class app {
             System.out.print(num);
             return;
         }
-        System.out.print(num + " ");
         printNum(num -1);
+        System.out.print(num + " ");
+
+        // !  for decreaesing 
+        // System.out.print(num + " ");
+        // printNum(num -1);
     }
+
+    public static  int fact(int num){
+      if(num <= 1 ){ // Base case , that is end of recursion 
+            return 1;
+        }
+    //  int factorial = 1;
+    int fn = num * fact(num -1); 
+         return fn;
+    }
+
     public static void main (String args []){
-        printNum(10);
+
+        // ! increasing and decresing order 
+        // printNum(10);
+
+//  ! factorial of a number 
+        System.out.print(fact(4));
+
+
+        
     }
 }
+
+//  1 to 10 
