@@ -43,9 +43,93 @@ public class app {
         // * +++++++++++++++++++++
         
         // ? fibonaccii series 
-         System.out.print(fib(22));
+        //  System.out.print(fib(22));
+
+        // ? check if the even array is sorted or not 
+        // System.out.print(isSorted(new int []{2,3,4,5,8,},0));
+
+
+        // ?? WAF to find a  first occurance of an element in an arry
+        // System.out.print(firstOccurance(new int []{2,3,4,3,6,7,5},5,0)); 
+
+        // ?? WAF to find a  last  occurance of an element in an arry 
+        // ! dout to nahi hai , but samja nahi indetail
+        // System.out.print(lastOccurance(new int []{2,3,4,3,6,7,5,5,5,5,5},5,0)); 
+
+// ? x to the power 
+// System.out.print(power(2,10));
+// ? x to the power - OPtimized 0(logn)
+//  * x^n ==> 2^4 ( n== even) = x ^ n/2 * x ^ n/2
+//  * x^n ==> 2^5 ( n== odd) =  x *  x ^ n/2 * x ^ n/2
+ System.out.print(optimisedPower(2,10)); 
+ 
+        
         
     }
+
+
+public static int optimisedPower(int x , int n ){
+if(n==0){
+    return 1 ;
+}
+int halfPower = optimisedPower(x,n/2);
+// int halfPowerSqr = optimisedPower(x,n/2) * optimisedPower(x,n/2); ye tim complexity same hi hoga like 0(n)  ekuu kii 2 bar call hori hai stuff 
+int halfPowerSqr = halfPower * halfPower;
+//n is odd 
+if(n %2 !=0){
+    halfPowerSqr  =x * halfPowerSqr;
+}
+return halfPowerSqr;
+}
+
+
+public static  int  power( int x ,int n){
+    if(n ==0){
+        return 1 ;
+    }
+    // int xnm1 =power(x,n-1)
+    // int xn = x * xnm1;
+    // return xn  ;
+
+    return x * power(x , n-1);
+}
+
+
+    public static int lastOccurance(int arr[] ,int key , int i ){
+if(i == arr.length ){
+    return -1;
+}
+int isFound = lastOccurance(arr,key,i+1);
+if(isFound == -1  && arr[i]==key){
+    return i;
+}
+
+return isFound;
+}
+
+public static int firstOccurance(int arr[] ,int key , int i ){
+if(i == arr.length ){
+    return -1;
+}
+if(arr[i]==key){
+    return i;
+}
+
+return firstOccurance(arr,key,i+1);
+}
+
+
+public static boolean isSorted(int arr[], int i){
+if(i== arr.length -1){
+    return true;
+}
+if(arr[i] > arr[i+1]){
+    return false;
+}
+return isSorted(arr , i+1);
+
+
+}
 
     public static  int fib(int n ){
         if(n==0 || n==1){
