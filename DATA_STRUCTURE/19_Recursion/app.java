@@ -73,9 +73,56 @@ public class app {
 //  * Remove Duplicates  in a string 
 //   only small alphapet included , if capatial , symbol or number is thhere we can use hash set 
 // System.out.print()
-rmvDup(0 , "hellllllo",new boolean[26],new StringBuilder(""));        
-        
+// rmvDup(0 , "hellllllo",new boolean[26],new StringBuilder(""));        
+
+//!   Friends Pairing Problem
+//?  Given n friends, each one can remain single or can be paired up with some other
+//?  friend. Each friend can be paired only once. Find out the total number of ways in
+//?  which friends can remain single or can be paired up.
+// System.out.print(friendParing(3));
+
+// Binary
+// Strings Problem
+// Print all binary strings of size N without consecutive ones.        
+binaryNumber(3, 0, " ");
+
+
+
     }
+public static void binaryNumber(int  n , int lastPlace , String str){
+//base case 
+if(n==0){
+    System.out.println(str);
+    return ;
+}
+
+//kamm 
+binaryNumber(n-1,0 ,str+"0");
+if(lastPlace == 0 ){
+    binaryNumber(n-1,1,str+"1");
+}
+
+}
+
+public static int friendParing(int n ){
+
+    ///base case 
+    if(n==1 || n==2) return n ;
+    // //option 
+    // //single
+    // int fnm1 = friendParing(n-1);
+    // //paired 
+    // int fnm2 = friendParing(n-2);
+    // int pairedTotal = (n-1)* fnm2 ;
+
+    // int totalWays = fnm1 + pairedTotal ;
+    // return totalWays ;
+
+    // inshort 
+    return friendParing(n-1) + (n-1)* friendParing(n-2) ;
+    
+}
+
 
     public static   void rmvDup( int index , String str , boolean map[] , StringBuilder newStr){
  
