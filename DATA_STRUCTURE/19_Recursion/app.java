@@ -61,12 +61,57 @@ public class app {
 // ? x to the power - OPtimized 0(logn)
 //  * x^n ==> 2^4 ( n== even) = x ^ n/2 * x ^ n/2
 //  * x^n ==> 2^5 ( n== odd) =  x *  x ^ n/2 * x ^ n/2
- System.out.print(optimisedPower(2,10)); 
+//  System.out.print(optimisedPower(2,10)); 
+
+
+// ? Tilling problem 
+// Given a "2 x n" board and tiles of size "2 x 1", count the number of
+// ways to tile the given board using the 2 x 1 tiles.
+// (A tile can either be placed horizontally or vertically. )
+//  System.out.print(tillingPlat(4));
  
-        
+//  * Remove Duplicates  in a string 
+//   only small alphapet included , if capatial , symbol or number is thhere we can use hash set 
+// System.out.print()
+rmvDup(0 , "hellllllo",new boolean[26],new StringBuilder(""));        
         
     }
 
+    public static   void rmvDup( int index , String str , boolean map[] , StringBuilder newStr){
+ 
+
+ // base 
+ if(index  == str.length()){
+    System.out.print(newStr);
+    return;
+ }
+
+//    kamm 
+char currchar = str.charAt(index);
+if(map[ currchar - 'a']== true){
+    rmvDup(index+1,str,map, newStr);
+}else {
+    map[currchar -'a'] = true ;
+    rmvDup(index+1,str,map, newStr.append(currchar));
+}
+    }
+
+public static int tillingPlat(int n ){
+    if(n==0  || n==1){
+        return 1 ;
+    }
+    // choices 
+    // vertical choices
+    int fnm1 = tillingPlat(n - 1);
+  
+  // horizontal
+    int fnm2 = tillingPlat(n-2);
+
+ int total = fnm1 + fnm2 ;
+ return total ;
+
+}
+ 
 
 public static int optimisedPower(int x , int n ){
 if(n==0){
