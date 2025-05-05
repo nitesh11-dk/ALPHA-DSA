@@ -96,6 +96,14 @@ public class app {
         // uses pivot & partition
         quickSort(arr, 0, arr.length - 1);
         printArray(arr);
+        // * qucik sort wrost cases - condition
 
+        // Search in Rotated Sorted Array
+        // input : sorted, rotated array with distinct numbers (in ascending order)
+        // It is rotated at a pivot point. Find the index of given element.
+        // 4 5 6 7 0 1 2 target:
+
+        // ? modified binary sarch
+        // * agar sorted aur rotated array hai to hamesa do line banti hai
     }
 }
