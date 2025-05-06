@@ -82,28 +82,63 @@ public class app {
         return i;
     }
 
+    public static int search(int arr[], int tar, int si, int ei) {
+        if (si > ei) {
+            return -1; // the target element do not exist in the array
+        }
+        int mid = si + (ei - si) / 2;
+        // case found
+        if (arr[mid] == tar) {
+            return mid;
+        }
+
+        /// on l1 
+        if (arr[si] <= arr[mid]) {
+            // case a : left
+            if (arr[si] <= tar && tar <= arr[mid]) {
+                return search(arr, tar, si, mid - 1);
+            } else {
+                return search(arr, tar, mid + 1, ei);
+            }
+        }
+        /// on l2 
+        else {
+            if (arr[mid] <= tar && tar <= arr[ei]) {
+                return search(arr, tar, mid + 1, ei);
+            } else {
+                return search(arr, tar, si, mid - 1);
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
         // Merge Sort : -
         // ? time comp = nlogn
         // ? to impleement this merge sort we us depth first approach
         //
-        int arr[] = new int[] { 3, 222, 7, 3, 8, 3, 6 };
+        // int arr[] = new int[] { 3, 222, 7, 3, 8, 3, 6 };
         // mergeSort(arr, 0, arr.length - 1);
         // printArray(arr);
 
         // ! quick sort
         // uses pivot & partition
-        quickSort(arr, 0, arr.length - 1);
-        printArray(arr);
+        // quickSort(arr, 0, arr.length - 1);
+        // printArray(arr);
         // * qucik sort wrost cases - condition
+        // wrost case occurs when pivot is always the smaallest or the largest element
+        // o(n^2)
 
-        // Search in Rotated Sorted Array
+        // Search in Rotated Sorted Array - medium level
         // input : sorted, rotated array with distinct numbers (in ascending order)
         // It is rotated at a pivot point. Find the index of given element.
         // 4 5 6 7 0 1 2 target:
 
-        // ? modified binary sarch
+        // ? modified binary sarch - o(nlogn)
         // * agar sorted aur rotated array hai to hamesa do line banti hai
+        int arr23[] = { 4,5,6,7,0,1,2};
+        int tar = 2;
+        int tarIdx = search(arr23, tar, 0, arr23.length -1 );
+        System.out.println(tarIdx);
     }
 }
